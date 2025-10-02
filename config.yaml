@@ -1,6 +1,22 @@
 # 数据区间
-start: 2019-01-01
-end: 2024-06-30
+# ===== JQData 账号类型 =====
+account_type: trial      # trial = 试用（15→3 个月） | formal = 正式（不限制）
+
+# ===== 自动日期区间 =====
+# 试用账号：前 15 个月 ~ 前 3 个月
+# 正式账号：2019-01-01 ~ 2024-06-30（可任意改）
+date_cfg:
+  trial:
+    start: 2023-07-01   # 今天 -15 个月
+    end:   2024-07-01   # 今天 -3  个月
+  formal:
+    start: 2019-01-01
+    end:   2024-06-30
+
+# ===== 其余配置保持原样 =====
+jq_user: 'YOUR_JQ_PHONE'
+jq_pass: 'YOUR_JQ_PASSWORD'
+
 univ: ["CSI500", "CSI1000"]   # AkShare 支持
 
 # 路径
