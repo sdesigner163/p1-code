@@ -1,0 +1,32 @@
+```yaml
+# 数据区间
+start: 2019-01-01
+end: 2024-06-30
+univ: ["CSI500", "CSI1000"]   # AkShare 支持
+
+# 路径
+raw_dir: ./data/raw
+feature_dir: ./data/features
+result_dir: ./results
+
+# 特征参数
+vpin_buckets: 50
+rv_minutes: 240
+tr_window: 30          # 收盘前 30 min 成交量
+zscore_window: 60
+
+# 训练
+roll_train_days: 360
+roll_valid_days: 60
+roll_test_days: 60
+optuna_trials: 64
+lgb_params:
+  objective: binary
+  metric: auc
+  verbosity: -1
+  boost_from_average: false
+  focal_alpha: 0.75
+  focal_gamma: 2.0
+
+# 交易假设
+cost: 0.003   # 单边 0.3%
