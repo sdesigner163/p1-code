@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+import subprocess, sys, os
+os.chdir(os.path.dirname(os.path.abspath(__file__)))   # <-- 新增
 """
 端到端流水线控制台（单文件、跨平台）
 > python run.py

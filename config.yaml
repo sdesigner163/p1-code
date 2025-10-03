@@ -7,17 +7,20 @@ account_type: trial      # trial = 试用（15→3 个月） | formal = 正式�
 # 正式账号：2019-01-01 ~ 2024-06-30（可任意改）
 date_cfg:
   trial:
-    start: 2023-07-01   # 今天 -15 个月
-    end:   2024-07-01   # 今天 -3  个月
+    start: AUTO   # 脚本自动计算
+    end:   AUTO
   formal:
     start: 2019-01-01
     end:   2024-06-30
 
 # ===== 其余配置保持原样 =====
 jq_user: 'YOUR_JQ_PHONE'
-jq_pass: 'YOUR_JQ_PASSWORD'
+jq_pass: 'YOUR_JQ_PASSWORD#'
 
-univ: ["CSI500", "CSI1000"]   # AkShare 支持
+univ:
+  - '000300.XSHG'   # 沪深300
+  - '000905.XSHG'   # 中证500
+  - '399006.XSHE'   # 创业板指
 
 # 路径
 raw_dir: ./data/raw
